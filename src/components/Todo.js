@@ -9,6 +9,11 @@ function Todo(props) {
   function deleteHandler() {
     setShowModal(!showModal);
   }
+
+  function closeModalHandler() {
+    setShowModal(false);
+  }
+
   return (
     <div>
       <div className="card">
@@ -20,7 +25,7 @@ function Todo(props) {
         </div>
 
         {showModal && <Modal></Modal>}
-        {showModal && <Backdrop></Backdrop>}
+        {showModal && <Backdrop onClick={closeModalHandler}></Backdrop>}
       </div>
     </div>
   );
